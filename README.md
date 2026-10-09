@@ -25,8 +25,8 @@ Every theme also replaces Potassium's own loading and login picture with its wal
 ## River Sunset
 
 <picture>
-  <source srcset="river-sunset/screens.avif" type="image/avif">
-  <img src="river-sunset/screens.jpg" alt="River Sunset theme">
+  <source srcset="river-sunset/ui.avif" type="image/avif">
+  <img src="river-sunset/ui.jpg" alt="River Sunset theme">
 </picture>
 
 <picture>
@@ -39,8 +39,8 @@ Every theme also replaces Potassium's own loading and login picture with its wal
 ## Demon Mask
 
 <picture>
-  <source srcset="demon-mask/screens.avif" type="image/avif">
-  <img src="demon-mask/screens.jpg" alt="Demon Mask theme">
+  <source srcset="demon-mask/ui.avif" type="image/avif">
+  <img src="demon-mask/ui.jpg" alt="Demon Mask theme">
 </picture>
 
 <picture>
@@ -53,8 +53,8 @@ Every theme also replaces Potassium's own loading and login picture with its wal
 ## Enter the Gungeon
 
 <picture>
-  <source srcset="gungeon/screens.avif" type="image/avif">
-  <img src="gungeon/screens.jpg" alt="Enter the Gungeon theme">
+  <source srcset="gungeon/ui.avif" type="image/avif">
+  <img src="gungeon/ui.jpg" alt="Enter the Gungeon theme">
 </picture>
 
 <picture>
@@ -67,8 +67,8 @@ Every theme also replaces Potassium's own loading and login picture with its wal
 ## Sunset Drive
 
 <picture>
-  <source srcset="car-sunset/screens.avif" type="image/avif">
-  <img src="car-sunset/screens.jpg" alt="Sunset Drive theme">
+  <source srcset="car-sunset/ui.avif" type="image/avif">
+  <img src="car-sunset/ui.jpg" alt="Sunset Drive theme">
 </picture>
 
 <picture>

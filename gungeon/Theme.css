@@ -150,15 +150,11 @@
 :root[data-theme] .sidebar { border-right: 2px solid #0a0418; box-shadow: 2px 0 0 #5ff2ff55; }
 :root[data-theme] .splitter-x { background-color: transparent !important; }
 :root[data-theme] .tab-bar { border-bottom: 2px solid #0a0418; box-shadow: 0 2px 0 #5ff2ff44; }
-:root[data-theme] .tab-bar .strip .tab { background-image: none; }
-:root[data-theme] .tab-bar .strip .tab::before,
-:root[data-theme] .tab-bar .strip .tab::after { display: none; }
-:root[data-theme] .tab-bar .strip .tab.is-active { background-color: #5ff2ff; color: #0a0418; font-weight: 700; }
-:root[data-theme] .tab-bar .strip .tab.is-active * { color: #0a0418; }
 :root[data-theme] .chip-button { border: 2px solid #0a0418; box-shadow: 3px 3px 0 #0a0418; }
 :root[data-theme] .chip-button.is-accent { box-shadow: 3px 3px 0 #0a0418, 3px 3px 0 2px #5ff2ff66; }
 :root[data-theme] .status { border-top: 2px solid #0a0418; font-family: "Cascadia Mono", Consolas, monospace; }
-:root[data-theme] .sidebar .section-title, :root[data-theme] .start h2 { font-family: "Cascadia Mono", Consolas, monospace; }
+:root[data-theme] .sidebar .section-title,
+:root[data-theme] .start h2 { font-family: "Cascadia Mono", Consolas, monospace; }
 
 :root[data-theme] .start .hero h1::after {
   color: #a8f8ff;
@@ -167,6 +163,30 @@
   text-shadow: 4px 4px 0 #7a3fd0;
 }
 :root[data-theme] .start .hero h1::after { font-size: 40px; }
+
+/* Tabs. */
+:root[data-theme] .tab-bar .strip .tab { background-image: none; }
+:root[data-theme] .tab-bar .strip .tab::before,
+:root[data-theme] .tab-bar .strip .tab::after { display: none; top: auto; width: auto; }
+
+/* Bullet tabs: a brass casing on the left and a pointed tip on the right. */
+:root[data-theme] .tab-bar .strip .tab { padding-right: 20px; }
+:root[data-theme] .tab-bar .strip .tab.is-active {
+  background-color: #5ff2ff;
+  color: #0a0418;
+  font-weight: 700;
+  box-shadow: inset 6px 0 0 #c99a3a;
+  clip-path: polygon(0 0, calc(100% - 12px) 0, 100% 35%, 100% 65%, calc(100% - 12px) 100%, 0 100%);
+}
+:root[data-theme] .tab-bar .strip .tab.is-active * { color: #0a0418; }
+
+/* Script tab icon. */
+:root[data-theme] .tab-bar .strip .tab:not(.no-close) .tab-glyph > * { display: none; }
+:root[data-theme] .tab-bar .strip .tab:not(.no-close) .tab-glyph {
+  background-color: currentColor;
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M9 21V10c0-4 1.5-7 3-8 1.5 1 3 4 3 8v11z'/%3E%3Cpath d='M9 16.5h6'/%3E%3C/svg%3E") center / 16px 16px no-repeat;
+  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M9 21V10c0-4 1.5-7 3-8 1.5 1 3 4 3 8v11z'/%3E%3Cpath d='M9 16.5h6'/%3E%3C/svg%3E") center / 16px 16px no-repeat;
+}
 
 /* Animated wallpaper behind the whole app. */
 html, body {
