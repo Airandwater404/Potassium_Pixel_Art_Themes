@@ -1,0 +1,173 @@
+/* River Sunset theme for Potassium. Base theme: Dark. */
+:root[data-theme] {
+  --radius-sm: 4px;
+  --radius-md: 6px;
+  --radius-lg: 10px;
+
+  --bg-app: rgba(18, 22, 38, 0.1);
+  --bg-chrome: rgba(18, 22, 38, 0.55);
+  --bg-sidebar: rgba(18, 22, 38, 0.58);
+  --bg-editor: rgba(18, 22, 38, 0.45);
+  --bg-panel: rgba(18, 22, 38, 0.62);
+  --bg-status: rgba(18, 22, 38, 0.7);
+  --bg-elevated: rgba(18, 22, 38, 0.96);
+  --bg-input: rgba(18, 22, 38, 0.6);
+  --bg-hover: rgba(242, 166, 90, 0.12);
+  --bg-active: rgba(242, 166, 90, 0.22);
+  --border: rgba(242, 166, 90, 0.16);
+  --border-strong: rgba(242, 166, 90, 0.34);
+
+  --text: #f6eee2;
+  --text-muted: #c7bfb4;
+  --text-faint: #7f8296;
+  --row-icon: #ffc98a;
+
+  --accent: rgb(242, 166, 90);
+  --accent-hover: #ffc98a;
+  --accent-soft: rgba(242, 166, 90, 0.2);
+  --on-accent: #1a1208;
+  --tab-accent: rgb(242, 166, 90);
+  --tab-rule: transparent;
+  --tab-glyph: #ffc98a;
+  --tab-divider-width: 0px;
+  --tab-active-bg: rgba(242, 166, 90, 0.16);
+
+  --ok: #8be9a8;
+  --warn: #ffd76e;
+  --danger: #ff6b7a;
+  --titlebar-fg: #f6eee2;
+  --titlebar-close-hover: #c8643a;
+  --scrollbar-thumb: rgba(242, 166, 90, 0.3);
+}
+
+/* Settings opens over everything; keep it readable over the moving wallpaper. */
+:root[data-theme] .settings-dialog {
+  background-color: rgba(18, 22, 38, 0.9) !important;
+  -webkit-backdrop-filter: blur(24px) saturate(1.2);
+  backdrop-filter: blur(24px) saturate(1.2);
+}
+
+:root[data-theme] .settings-dialog .settings {
+  background-color: transparent !important;
+}
+
+/* Monaco paints its own solid background; let the wallpaper through. */
+.monaco-editor,
+.monaco-editor .overflow-guard,
+.monaco-editor-background,
+.monaco-editor .margin,
+.monaco-editor .inputarea.ime-input {
+  background-color: transparent !important;
+}
+
+.monaco-editor .view-overlays .current-line,
+.monaco-editor .margin-view-overlays .current-line-margin {
+  background: rgba(242, 166, 90, 0.07) !important;
+  border: none !important;
+}
+
+.monaco-editor .line-numbers { color: #7f8296 !important; }
+.monaco-editor .line-numbers.active-line-number { color: #ffc98a !important; }
+.monaco-editor .view-lines { text-shadow: 0 1px 3px rgba(0, 0, 0, 0.85); }
+.monaco-editor .scroll-decoration { box-shadow: none !important; }
+
+/* The minimap is a canvas with a solid fill; blending drops it into the wallpaper. */
+.monaco-editor .minimap,
+.monaco-editor .minimap canvas {
+  mix-blend-mode: screen !important;
+}
+
+.monaco-editor .minimap { opacity: 0.55 !important; }
+.monaco-editor .minimap-shadow-visible { box-shadow: none !important; }
+
+/* Show the wallpaper on the loading and login screens instead of Potassium's own picture. */
+:root[data-theme] .backdrop {
+  background: color-mix(in srgb, #121626 30%, transparent) !important;
+  -webkit-backdrop-filter: blur(6px) !important;
+  backdrop-filter: blur(6px) !important;
+}
+
+/* Custom labels. */
+:root[data-theme] .titlebar-title { font-size: 0 !important; }
+:root[data-theme] .titlebar-title::after {
+  content: "RIVER SUNSET";
+  font-size: 13px;
+  font-family: "Cascadia Mono", Consolas, monospace;
+  letter-spacing: 0.28em;
+}
+
+:root[data-theme] .sidebar .head-title { font-size: 0 !important; }
+:root[data-theme] .sidebar .head-title::after {
+  content: "INVENTORY";
+  font-size: 14px;
+  font-family: "Cascadia Mono", Consolas, monospace;
+  letter-spacing: 0.08em;
+}
+
+
+:root[data-theme] .start .hero h1 { font-size: 0 !important; line-height: 1 !important; }
+:root[data-theme] .start .hero h1::before {
+  content: "PRESS START";
+  display: block;
+  margin-bottom: 10px;
+  font-family: var(--font-ui);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.42em;
+  color: var(--accent);
+}
+
+:root[data-theme] .start .hero h1::after {
+  content: "EVENING";
+  font-family: "Cascadia Mono", Consolas, monospace;
+  font-size: 44px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+}
+
+
+/* A vertical line of text at the foot of the explorer. */
+:root[data-theme] .sidebar { position: relative; isolation: isolate; }
+:root[data-theme] .sidebar::after {
+  content: "1UP";
+  position: absolute;
+  right: 16px;
+  bottom: 22px;
+  writing-mode: vertical-rl;
+  font-family: "Cascadia Mono", Consolas, monospace;
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: 0.5em;
+  color: rgba(255, 201, 138, 0.45);
+  pointer-events: none;
+}
+
+:root[data-theme] .sidebar::after { text-orientation: upright; letter-spacing: 0.12em; font-size: 16px; }
+
+/* Pixel-art frame: square corners, hard borders, no blur. */
+:root[data-theme] * { border-radius: 0 !important; }
+:root[data-theme] header.titlebar { border-bottom: 2px solid #0b0e1a; }
+:root[data-theme] .sidebar { border-right: 2px solid #0b0e1a; box-shadow: 2px 0 0 #f2a65a55; }
+:root[data-theme] .splitter-x { background-color: transparent !important; }
+:root[data-theme] .tab-bar { border-bottom: 2px solid #0b0e1a; box-shadow: 0 2px 0 #f2a65a44; }
+:root[data-theme] .tab-bar .strip .tab { background-image: none; }
+:root[data-theme] .tab-bar .strip .tab::before,
+:root[data-theme] .tab-bar .strip .tab::after { display: none; }
+:root[data-theme] .tab-bar .strip .tab.is-active { background-color: #f2a65a; color: #0b0e1a; font-weight: 700; }
+:root[data-theme] .tab-bar .strip .tab.is-active * { color: #0b0e1a; }
+:root[data-theme] .chip-button { border: 2px solid #0b0e1a; box-shadow: 3px 3px 0 #0b0e1a; }
+:root[data-theme] .chip-button.is-accent { box-shadow: 3px 3px 0 #0b0e1a, 3px 3px 0 2px #f2a65a66; }
+:root[data-theme] .status { border-top: 2px solid #0b0e1a; font-family: "Cascadia Mono", Consolas, monospace; }
+:root[data-theme] .sidebar .section-title, :root[data-theme] .start h2 { font-family: "Cascadia Mono", Consolas, monospace; }
+
+:root[data-theme] .start .hero h1::after {
+  color: #ffc98a;
+  font-size: 46px;
+  letter-spacing: 0.08em;
+  text-shadow: 4px 4px 0 #c8643a;
+}
+
+/* Animated wallpaper behind the whole app. */
+html, body {
+  background: url("https://raw.githubusercontent.com/Airandwater404/Potassium_Pixel_Art_Themes/main/river-sunset/river-sunset.avif") center / cover fixed no-repeat, #121626 !important;
+}

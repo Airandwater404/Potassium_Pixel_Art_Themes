@@ -1,0 +1,174 @@
+/* Sunset Drive theme for Potassium. Base theme: Dark. */
+:root[data-theme] {
+  --radius-sm: 4px;
+  --radius-md: 6px;
+  --radius-lg: 10px;
+
+  --bg-app: rgba(28, 18, 18, 0.15);
+  --bg-chrome: rgba(28, 18, 18, 0.6);
+  --bg-sidebar: rgba(28, 18, 18, 0.62);
+  --bg-editor: rgba(28, 18, 18, 0.5);
+  --bg-panel: rgba(28, 18, 18, 0.66);
+  --bg-status: rgba(28, 18, 18, 0.72);
+  --bg-elevated: rgba(28, 18, 18, 0.96);
+  --bg-input: rgba(28, 18, 18, 0.6);
+  --bg-hover: rgba(255, 122, 89, 0.12);
+  --bg-active: rgba(255, 122, 89, 0.22);
+  --border: rgba(255, 160, 120, 0.16);
+  --border-strong: rgba(255, 160, 120, 0.34);
+
+  --text: #fbeee8;
+  --text-muted: #d6bfb6;
+  --text-faint: #8f7670;
+  --row-icon: #ffab8f;
+
+  --accent: rgb(255, 122, 89);
+  --accent-hover: #ffab8f;
+  --accent-soft: rgba(255, 122, 89, 0.2);
+  --on-accent: #2a0c04;
+  --tab-accent: rgb(255, 122, 89);
+  --tab-rule: transparent;
+  --tab-glyph: #ffab8f;
+  --tab-divider-width: 0px;
+  --tab-active-bg: rgba(255, 122, 89, 0.16);
+
+  --ok: #8be9a8;
+  --warn: #ffd76e;
+  --danger: #ff6b7a;
+  --titlebar-fg: #fbeee8;
+  --titlebar-close-hover: #c0402a;
+  --scrollbar-thumb: rgba(255, 122, 89, 0.3);
+}
+
+/* Settings opens over everything; keep it readable over the moving wallpaper. */
+:root[data-theme] .settings-dialog {
+  background-color: rgba(28, 18, 18, 0.9) !important;
+  -webkit-backdrop-filter: blur(24px) saturate(1.2);
+  backdrop-filter: blur(24px) saturate(1.2);
+}
+
+:root[data-theme] .settings-dialog .settings {
+  background-color: transparent !important;
+}
+
+/* Monaco paints its own solid background; let the wallpaper through. */
+.monaco-editor,
+.monaco-editor .overflow-guard,
+.monaco-editor-background,
+.monaco-editor .margin,
+.monaco-editor .inputarea.ime-input {
+  background-color: transparent !important;
+}
+
+.monaco-editor .view-overlays .current-line,
+.monaco-editor .margin-view-overlays .current-line-margin {
+  background: rgba(255, 122, 89, 0.07) !important;
+  border: none !important;
+}
+
+.monaco-editor .line-numbers { color: #8f7670 !important; }
+.monaco-editor .line-numbers.active-line-number { color: #ffab8f !important; }
+.monaco-editor .view-lines { text-shadow: 0 1px 3px rgba(0, 0, 0, 0.85); }
+.monaco-editor .scroll-decoration { box-shadow: none !important; }
+
+/* The minimap is a canvas with a solid fill; blending drops it into the wallpaper. */
+.monaco-editor .minimap,
+.monaco-editor .minimap canvas {
+  mix-blend-mode: screen !important;
+}
+
+.monaco-editor .minimap { opacity: 0.55 !important; }
+.monaco-editor .minimap-shadow-visible { box-shadow: none !important; }
+
+/* Show the wallpaper on the loading and login screens instead of Potassium's own picture. */
+:root[data-theme] .backdrop {
+  background: color-mix(in srgb, #1c1212 30%, transparent) !important;
+  -webkit-backdrop-filter: blur(6px) !important;
+  backdrop-filter: blur(6px) !important;
+}
+
+/* Custom labels. */
+:root[data-theme] .titlebar-title { font-size: 0 !important; }
+:root[data-theme] .titlebar-title::after {
+  content: "NIGHT RUN";
+  font-size: 13px;
+  font-family: "Cascadia Mono", Consolas, monospace;
+  letter-spacing: 0.28em;
+}
+
+:root[data-theme] .sidebar .head-title { font-size: 0 !important; }
+:root[data-theme] .sidebar .head-title::after {
+  content: "GARAGE";
+  font-size: 14px;
+  font-family: "Cascadia Mono", Consolas, monospace;
+  letter-spacing: 0.08em;
+}
+
+
+:root[data-theme] .start .hero h1 { font-size: 0 !important; line-height: 1 !important; }
+:root[data-theme] .start .hero h1::before {
+  content: "SPRINTER TRUENO · AE86";
+  display: block;
+  margin-bottom: 10px;
+  font-family: var(--font-ui);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.42em;
+  color: var(--accent);
+}
+
+:root[data-theme] .start .hero h1::after {
+  content: "SUNSET DRIVE";
+  font-family: "Cascadia Mono", Consolas, monospace;
+  font-size: 44px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+}
+
+
+/* A vertical line of text at the foot of the explorer. */
+:root[data-theme] .sidebar { position: relative; isolation: isolate; }
+:root[data-theme] .sidebar::after {
+  content: "TOUGE";
+  position: absolute;
+  right: 16px;
+  bottom: 22px;
+  writing-mode: vertical-rl;
+  font-family: "Cascadia Mono", Consolas, monospace;
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: 0.5em;
+  color: rgba(255, 171, 143, 0.45);
+  pointer-events: none;
+}
+
+:root[data-theme] .sidebar::after { text-orientation: upright; letter-spacing: 0.12em; font-size: 16px; }
+
+/* Pixel-art frame: square corners, hard borders, no blur. */
+:root[data-theme] * { border-radius: 0 !important; }
+:root[data-theme] header.titlebar { border-bottom: 2px solid #140806; }
+:root[data-theme] .sidebar { border-right: 2px solid #140806; box-shadow: 2px 0 0 #ff7a5955; }
+:root[data-theme] .splitter-x { background-color: transparent !important; }
+:root[data-theme] .tab-bar { border-bottom: 2px solid #140806; box-shadow: 0 2px 0 #ff7a5944; }
+:root[data-theme] .tab-bar .strip .tab { background-image: none; }
+:root[data-theme] .tab-bar .strip .tab::before,
+:root[data-theme] .tab-bar .strip .tab::after { display: none; }
+:root[data-theme] .tab-bar .strip .tab.is-active { background-color: #ff7a59; color: #140806; font-weight: 700; }
+:root[data-theme] .tab-bar .strip .tab.is-active * { color: #140806; }
+:root[data-theme] .chip-button { border: 2px solid #140806; box-shadow: 3px 3px 0 #140806; }
+:root[data-theme] .chip-button.is-accent { box-shadow: 3px 3px 0 #140806, 3px 3px 0 2px #ff7a5966; }
+:root[data-theme] .status { border-top: 2px solid #140806; font-family: "Cascadia Mono", Consolas, monospace; }
+:root[data-theme] .sidebar .section-title, :root[data-theme] .start h2 { font-family: "Cascadia Mono", Consolas, monospace; }
+
+:root[data-theme] .start .hero h1::after {
+  color: #fff1e8;
+  font-size: 46px;
+  letter-spacing: 0.08em;
+  text-shadow: 4px 4px 0 #c0402a;
+}
+:root[data-theme] .start .hero h1::after { font-style: italic; font-size: 42px; }
+
+/* Animated wallpaper behind the whole app. */
+html, body {
+  background: linear-gradient(90deg, rgba(20, 10, 10, 0.6) 0%, rgba(20, 10, 10, 0.25) 40%, rgba(20, 10, 10, 0) 70%), linear-gradient(rgba(20, 10, 10, 0.2), rgba(20, 10, 10, 0.2)), url("https://raw.githubusercontent.com/Airandwater404/Potassium_Pixel_Art_Themes/main/car-sunset/car-sunset.avif") center / cover fixed no-repeat, #1c1212 !important;
+}
